@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Proyecto con Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .carousel-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .carousel-item img {
+            height: 300px;
+            object-fit: cover;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="py-3">
+        <div class="text-center mb-4">
+            <h2>Carousel</h2>
+        </div>
+
+        <div class="carousel-container">
+            <div id="miCarrusel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner shadow-sm rounded">
+                    <div class="carousel-item active">
+                        <img src="bootstrap.jpg" class="d-block w-100" alt="Slide 1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./ingenieria.jpg" class="d-block w-100" alt="Slide 2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="campus.jpg" class="d-block w-100" alt="Slide 3">
+                    </div>
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#miCarrusel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#miCarrusel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Siguiente</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-8 offset-md-2 text-center">
+                <p class="lead">
+                    Esta es la información que ahora se encuentra debajo del carrusel.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white pt-4 pb-2">
+        <div class="container text-center">
+            <p>Información obtenida de: <strong>GOOGLE CHROME</strong></p>
+            <hr>
+            <p class="small">&copy; 2026 - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
