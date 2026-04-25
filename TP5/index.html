@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Formulario UCASAL</title>
+</head>
+
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <div
+        class="flex px-8 py-10 my-10 gap-5 flex-col w-full max-w-md h-auto rounded-2xl border border-black bg-white shadow-xl">
+        <h1 class="text-black text-2xl font-bold uppercase text-center mb-4">Registro de Usuario</h1>
+
+        <form onsubmit="submitForm(event)" class="flex flex-col gap-5" novalidate>
+
+            <div class="flex flex-col gap-2">
+                <input type="text" id="input-nombre" placeholder="Nombre"
+                    class="w-full h-12 text-black text-md font-light uppercase border border-blue-600 outline-none px-5 py-2 transition-all">
+                <span class="hidden text-red-600 text-xs font-semibold">El Nombre debe tener al menos 3 letras y solo
+                    caracteres.</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <input type="text" id="input-apellido" placeholder="Apellido"
+                    class="w-full h-12 text-black text-md font-light uppercase border border-blue-600 outline-none px-5 py-2">
+                <span class="hidden text-red-600 text-xs font-semibold">El Apellido debe tener al menos 3 letras.</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <label class="text-[10px] text-gray-500 uppercase px-1">Fecha de Nacimiento</label>
+                <input type="date" id="input-fecha"
+                    class="w-full h-12 text-black text-md font-light uppercase border border-blue-600 outline-none px-5 py-2">
+                <span class="hidden text-red-600 text-xs font-semibold">Debes tener entre 18 y 40 años.</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <input type="email" id="input-email" placeholder="Email Institucional"
+                    class="w-full h-12 text-black text-md font-light border border-blue-600 outline-none px-5 py-2">
+                <span class="hidden text-red-600 text-xs font-semibold">Usa tu correo @ucasal.edu.ar</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <input type="password" id="input-contraseña" placeholder="Contraseña"
+                    class="w-full h-12 text-black text-md border border-blue-600 outline-none px-5 py-2">
+                <span class="hidden text-red-600 text-xs font-semibold">Las contraseñas no coinciden o están
+                    vacías.</span>
+            </div>
+
+            <div class="flex flex-col gap-2">
+                <input type="password" id="input-confirmar-contraseña" placeholder="Confirmar Contraseña"
+                    class="w-full h-12 text-black text-md border border-blue-600 outline-none px-5 py-2">
+                <span class="hidden text-red-600 text-xs font-semibold">Las contraseñas no coinciden.</span>
+            </div>
+
+            <div class="w-full mt-4">
+                <button type="submit"
+                    class="w-full h-12 bg-blue-600 text-white font-bold uppercase hover:bg-blue-700 transition-colors shadow-md">
+                    Enviar Registro
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
