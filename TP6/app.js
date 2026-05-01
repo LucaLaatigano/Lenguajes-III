@@ -17,7 +17,7 @@ $(document).ready(function () {
         $(this).css("color", "#1f2937");
     });
 
-    function getBadge(prioridad) {
+    function obtenerEtiqueta(prioridad) {
         const estilos = {
             Alta: "background:#fee2e2;color:#b91c1c;padding:2px 10px;border-radius:999px;font-size:0.75rem;",
             Media: "background:#fef9c3;color:#92400e;padding:2px 10px;border-radius:999px;font-size:0.75rem;",
@@ -39,9 +39,9 @@ $(document).ready(function () {
         $("#error-msg").fadeOut(150);
         $("#inputTarea").addClass("border-gray-300").removeClass("border-red-400");
 
-        const boton = `<button class="btn-eliminar text-xs text-red-500 border border-red-300 hover:bg-red-50 px-3 py-1 rounded transition-colors">Eliminar</button>`;
+        const botonEliminar = `<button class="btn-eliminar text-xs text-red-500 border border-red-300 hover:bg-red-50 px-3 py-1 rounded transition-colors">Eliminar</button>`;
 
-        const fila = tabla.row.add([nombre, getBadge(prioridad), boton]).draw(false).node();
+        const fila = tabla.row.add([nombre, obtenerEtiqueta(prioridad), botonEliminar]).draw(false).node();
         $(fila).hide().fadeIn(400);
 
         $("#inputTarea").val("");
