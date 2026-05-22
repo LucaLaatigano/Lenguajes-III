@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lenguajes III — Práctica de Repaso</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans p-6 md:p-12">
+
+    <h1 class="text-3xl font-extrabold mb-8 text-center text-slate-900">Trabajo Práctico 8</h1>
+
+    <div class="max-w-2xl mx-auto space-y-8">
+
+        <section class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-xl font-bold mb-4 border-b border-slate-100 pb-2 text-slate-900">Desafío 1 — Calculadora de Rendimiento Académico</h2>
+            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                <input id="materia" type="text" placeholder="Nombre de la materia"
+                    class="border border-slate-300 rounded-lg px-3 py-2 flex-1 text-sm focus:outline-none focus:border-slate-500" />
+                <input id="nota" type="number" placeholder="Nota (0-10)" min="0" max="10"
+                    class="border border-slate-300 rounded-lg px-3 py-2 w-full sm:w-28 text-sm focus:outline-none focus:border-slate-500" />
+                <div class="flex gap-2">
+                    <button onclick="agregarMateria()"
+                        class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-700 transition flex-1 sm:flex-none">Agregar</button>
+                    <button onclick="limpiarTodo()"
+                        class="bg-slate-100 text-slate-650 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition flex-1 sm:flex-none">Limpiar</button>
+                </div>
+            </div>
+            <div id="lista" class="mb-4"></div>
+            <div id="resumen" class="text-sm text-slate-600"></div>
+        </section>
+
+        <section class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-xl font-bold mb-4 border-b border-slate-100 pb-2 text-slate-900">Desafío 2 — Conversor de Unidades</h2>
+            <div class="flex flex-col sm:flex-row gap-3 mb-4">
+                <select id="tipoConversion" class="border border-slate-300 rounded-lg px-3 py-2 text-sm flex-1 focus:outline-none focus:border-slate-500 bg-white">
+                    <option value="1">Kilómetros → Millas</option>
+                    <option value="2">Millas → Kilómetros</option>
+                    <option value="3">Kilogramos → Libras</option>
+                    <option value="4">Libras → Kilogramos</option>
+                    <option value="5">Celsius → Fahrenheit</option>
+                    <option value="6">Fahrenheit → Celsius</option>
+                    <option value="7">Metros → Pies</option>
+                </select>
+                <input id="valor" type="number" placeholder="Valor" 
+                    class="border border-slate-300 rounded-lg px-3 py-2 w-full sm:w-28 text-sm focus:outline-none focus:border-slate-500" />
+                <button onclick="convertir()"
+                    class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-700 transition">Convertir</button>
+            </div>
+            <div id="resultado" class="text-sm font-semibold text-slate-900 mb-3"></div>
+            <div id="historial" class="text-sm text-slate-550"></div>
+        </section>
+
+        <section class="bg-white rounded-xl border border-slate-200 p-6 shadow-sm">
+            <h2 class="text-xl font-bold mb-4 border-b border-slate-100 pb-2 text-slate-900">Desafío 3 — Registrador de Números</h2>
+            <div class="flex flex-col sm:flex-row gap-3 mb-2">
+                <input id="numero" type="number" placeholder="Ingresá un número"
+                    class="border border-slate-300 rounded-lg px-3 py-2 flex-1 text-sm focus:outline-none focus:border-slate-500" />
+                <div class="flex gap-2">
+                    <button onclick="agregarNumero()"
+                        class="bg-slate-800 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-700 transition flex-1 sm:flex-none">Agregar</button>
+                    <button onclick="tablaMultiplicar()"
+                        class="bg-emerald-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-emerald-700 transition flex-1 sm:flex-none">Tabla</button>
+                    <button onclick="reiniciar()"
+                        class="bg-slate-100 text-slate-650 px-4 py-2 rounded-lg text-sm font-medium hover:bg-slate-200 transition flex-1 sm:flex-none">Reiniciar</button>
+                </div>
+            </div>
+            <div id="errorNumero" class="text-red-650 text-xs mb-3 h-4 font-medium"></div>
+            <div id="listaNumeros" class="text-sm text-slate-600 mb-3"></div>
+            <div id="estadisticas" class="text-sm text-slate-600 mb-3"></div>
+            <div id="tabla" class="text-sm text-slate-600"></div>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
