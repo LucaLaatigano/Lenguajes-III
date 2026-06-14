@@ -92,9 +92,9 @@ document.getElementById("btn-preguntas").addEventListener("click", function () {
     for (let i = 0; i < preguntas.length; i++) {
         let resp = prompt(preguntas[i])
         if (resp === null) {
-            respuestas.push("No respondió.")
+            respuestas.push("No respondio")
         } else {
-            respuestas.push(resp.trim() !== "" ? resp.trim() : "Sin respuesta.")
+            respuestas.push(resp.trim() !== "" ? resp.trim() : "Sin respuesta")
         }
     }
 

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Jugador - Torneo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tarjeta {
+            cursor: pointer;
+            transition: all .15s ease;
+        }
+
+        .seleccionado {
+            border-color: #2563eb;
+            background-color: #eff6ff;
+            box-shadow: 0 0 0 2px #2563eb;
+        }
+    </style>
+</head>
+
+<body class="bg-slate-100 min-h-screen py-10 text-slate-800">
+    <div class="max-w-3xl mx-auto px-4 space-y-6">
+
+        <header class="text-center">
+            <h1 class="text-2xl font-bold text-blue-700">Torneo de Videojuegos</h1>
+            <p class="text-slate-500">Formulario de inscripción de jugadores</p>
+        </header>
+
+        <section class="bg-white rounded-xl shadow p-6 space-y-5">
+            <h2 class="text-lg font-semibold text-blue-700">1. Datos del jugador</h2>
+
+            <div>
+                <label class="block font-medium mb-1">Nickname</label>
+                <input id="nickname" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500">
+                <p id="errorNickname" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Edad</label>
+                <input id="edad" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500">
+                <p id="errorEdad" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div>
+                <label class="block font-medium mb-1">Código de equipo</label>
+                <input id="codigo" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none focus:border-blue-500">
+                <p id="errorCodigo" class="text-red-500 text-sm mt-1"></p>
+            </div>
+        </section>
+
+        <section class="bg-white rounded-xl shadow p-6 space-y-4">
+            <h2 class="text-lg font-semibold text-blue-700">2. Selección de juego</h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'Minecraft')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png" alt="Minecraft"
+                        class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">Minecraft</p>
+                </div>
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'Fortnite')">
+                    <img src="https://cdn2.unrealengine.com/fortnite-chapter-5-season-3-key-art-1920x1080-1920x1080-af1f5c4c4b41.jpg"
+                        alt="Fortnite" class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">Fortnite</p>
+                </div>
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'Valorant')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/97/Valorant_cover.jpg" alt="Valorant"
+                        class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">Valorant</p>
+                </div>
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'FIFA 25')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/f/f5/EA_Sports_FC_25_cover.jpg" alt="FIFA 25"
+                        class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">FIFA 25</p>
+                </div>
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'Among Us')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/9/93/Among_Us_cover_art.jpg" alt="Among Us"
+                        class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">Among Us</p>
+                </div>
+                <div class="tarjeta border-2 border-slate-200 rounded-lg p-3 text-center"
+                    onclick="seleccionarJuego(this, 'Rocket League')">
+                    <img src="https://upload.wikimedia.org/wikipedia/en/a/ac/Rocket_League_coverart.jpg"
+                        alt="Rocket League" class="w-full h-28 object-cover rounded mb-2">
+                    <p class="font-medium">Rocket League</p>
+                </div>
+            </div>
+            <p id="errorJuego" class="text-red-500 text-sm"></p>
+
+            <button onclick="registrar()"
+                class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-lg transition">Registrar</button>
+            <p id="mensajeRegistro" class="text-center text-green-600 font-medium"></p>
+        </section>
+
+        <section id="seccionPreparacion" class="bg-white rounded-xl shadow p-6 space-y-4" hidden>
+            <h2 class="text-lg font-semibold text-blue-700">3. Preguntas de preparación</h2>
+            <button onclick="preparacion()"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-5 rounded-lg transition">Preparación</button>
+            <div id="respuestas" class="space-y-1 text-slate-700"></div>
+        </section>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
