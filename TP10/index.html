@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Registro del Aventurero</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-slate-100 min-h-screen py-10 text-slate-800">
+    <div class="max-w-xl mx-auto px-4 space-y-6">
+
+        <header class="text-center">
+            <h1 class="text-2xl font-bold text-blue-700">La Gran Alianza de Aventureros</h1>
+            <p class="text-slate-500">Formulario de inscripción de héroes</p>
+        </header>
+
+        <section class="bg-white rounded-xl shadow p-6 space-y-5">
+
+            <div id="p1">
+                <label class="block font-medium mb-1">¿Cuál es el nombre de tu personaje?</label>
+                <input id="campo1" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error1" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p2" class="hidden">
+                <label class="block font-medium mb-1">¿Cuál es tu raza?</label>
+                <select id="campo2" class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                    <option value="">Elegí una opción...</option>
+                    <option value="Humano">Humano</option>
+                    <option value="Elfo">Elfo</option>
+                    <option value="Enano">Enano</option>
+                    <option value="Orco">Orco</option>
+                </select>
+                <p id="error2" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p3" class="hidden">
+                <label class="block font-medium mb-1">¿Cuál es tu clase?</label>
+                <select id="campo3" class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                    <option value="">Elegí una opción...</option>
+                    <option value="Guerrero">Guerrero</option>
+                    <option value="Mago">Mago</option>
+                    <option value="Arquero">Arquero</option>
+                    <option value="Sanador">Sanador</option>
+                </select>
+                <p id="error3" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p4" class="hidden">
+                <label class="block font-medium mb-1">¿Cuál es el nombre de tu reino de origen?</label>
+                <input id="campo4" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error4" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p5" class="hidden">
+                <label class="block font-medium mb-1">¿Cuál es el nombre de tu arma principal?</label>
+                <input id="campo5" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error5" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p6" class="hidden">
+                <label class="block font-medium mb-1">¿Cuál es tu número de registro de aventurero?</label>
+                <input id="campo6" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error6" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p7" class="hidden">
+                <label class="block font-medium mb-1">¿Cuántos puntos de vida tenés?</label>
+                <input id="campo7" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error7" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p8" class="hidden">
+                <label class="block font-medium mb-1">¿Cuántas batallas ganaste?</label>
+                <input id="campo8" type="text"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error8" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p9" class="hidden">
+                <label class="block font-medium mb-1">¿Cuándo nació tu personaje?</label>
+                <input id="campo9" type="date"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error9" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="p10" class="hidden">
+                <label class="block font-medium mb-1">¿Cuándo comenzaste tu aventura?</label>
+                <input id="campo10" type="date"
+                    class="w-full border-2 border-slate-300 rounded-lg px-3 py-2 focus:outline-none">
+                <p id="error10" class="text-red-500 text-sm mt-1"></p>
+            </div>
+
+            <div id="controles" class="flex gap-3 pt-2">
+                <button id="btnRetroceder" onclick="retroceder()"
+                    class="flex-1 bg-slate-200 hover:bg-slate-300 text-slate-700 font-semibold py-2 rounded-lg transition disabled:opacity-40 disabled:cursor-not-allowed"
+                    disabled>Retroceder</button>
+                <button onclick="siguiente()"
+                    class="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition">Siguiente</button>
+                <button onclick="reiniciar()"
+                    class="flex-1 bg-slate-500 hover:bg-slate-600 text-white font-semibold py-2 rounded-lg transition">Reiniciar</button>
+            </div>
+
+            <div id="mensajeFinal"
+                class="hidden text-center bg-blue-50 border-2 border-blue-200 text-blue-800 font-semibold rounded-lg p-4">
+            </div>
+
+        </section>
+
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
